@@ -2,23 +2,44 @@
 ![Docker Image Status](https://github.com/Gershon-A/k8s/actions/workflows/docker-publish.yml/badge.svg)
 # Kubernetes tools for EKS
 
-docker build for AWS EKS, it can be used as normal kubectl tool as well
+docker build for AWS EKS, it can be used as normal kubectl tool as well.
+Most autocompletion installed.
 
 ### Installed tools
  COMPOSE_VERSION=1.25.0 
- HELM_VERSION=3.3.4 
+
+ HELM_VERSION=3.5.2
+
  KUBECTL_VERSION=1.18.8 
- ISTIO_VERSION=1.7.4 
- AWS-CLI=2.1.1 
+
+ ISTIO_VERSION=1.8.3
+
+ AWS-CLI=2.1.30 (14-03-2021)
+
  PYTHON=3.7.3
+
  GLIBC_VER=2.31-r0
+
+ SMALLSTEP_VERSION=0.15.8
  
+ KUBECTL-CERT_MANAGER=1.1.1
+
+ kubectx = master
+ 
+ kubens = master
+
+ kube-ps1 = master
+
 ### For latest see: 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (eks versions: https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)
 - [helm](https://github.com/helm/helm) (latest release: https://github.com/helm/helm/releases/latest)
 - [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator) (latest version when run the build)
 - [eksctl](https://github.com/weaveworks/eksctl) (latest version when run the build)
 - [awscli](https://github.com/aws/aws-cli) (latest version when run the build)
+- [smallstep/certificates] (https://github.com/smallstep/certificates) 0.15.8
+- [cert-manager] (https://github.com/jetstack/cert-manager) 1.1.1
+- [kubectx-and-kubens] (https://github.com/ahmetb/kubectx/blob/master/kubens) master
+- [kube-ps1] (https://github.com/jonmosco/kube-ps1) master
 - General tools, such as bash, curl
 ### Build
 ```
@@ -83,3 +104,7 @@ Also act as wrapper:
 docker exec -it aws-tools1 bash         
 [0.0.0.0] () root@6784ab43d24d ~
 ```
+## ToDo
+1. Optimize the image, reduce the size, reduce build time
+2. Change components to work always with the latest version's
+3. Add some automation test
